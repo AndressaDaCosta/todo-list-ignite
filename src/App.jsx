@@ -1,14 +1,17 @@
-import { useState } from 'react';
-import './styles/global.css';
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header"
+import { Tasks } from "./components/Tasks"
+import { TasksContextProvider } from "./contexts/TasksContext"
+
 
 export function App() {
-
   return (
-    <>
-      <h1 className="font-bold text-sm text-blue-300">Todo List</h1>
 
-      <input className="bg-purple font-medium px-4 py-2 rounded text-white hover:bg-purple-300"
-        placeholder="Insira um item na lista"      />
-    </>
+    <TasksContextProvider>
+      <Header />
+      <Tasks />
+      <Footer />
+    </TasksContextProvider>
+
   )
 }
