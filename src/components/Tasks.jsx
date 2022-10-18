@@ -2,7 +2,7 @@ import { Task } from './Task';
 import { TbClipboardText } from 'react-icons/tb';
 import { useTasks } from '../hooks/useTasks';
 
-import styles from './tasks.module.css';
+import styles from './Tasks.module.css';
 export function Tasks() {
 	const { tasks } = useTasks();
 

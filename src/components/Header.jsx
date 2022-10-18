@@ -4,7 +4,7 @@ import { useState } from 'react';
 import rocket from '../assets/rocket.svg';
 import { useTasks } from '../hooks/useTasks';
 
-import styles from './header.module.css';
+import styles from './Header.module.css';
 
 export function Header() {
 	const { addTask } = useTasks();
