@@ -4,10 +4,6 @@
 
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/AndressaDaCosta/todo-list-ignite?style=flat">
-
-  <a href="https://www.linkedin.com/in/andressa-da-costa">
-    <img alt="Feito por Andressa Da Costa" src="https://img.shields.io/badge/made%20by-Andressa%Costa-red">
-  </a>
   
 </p>
 
