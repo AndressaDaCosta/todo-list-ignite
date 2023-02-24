@@ -24,3 +24,10 @@
 .footer ul li {
 	margin-right: 1.25rem;
 }
+
+.footer svg {
+	color: var(--blue-dark);
+}
+.footer svg:hover {
+	color: var(--purple);
+}
