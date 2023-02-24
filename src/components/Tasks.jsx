@@ -1,15 +1,16 @@
-import { Task } from './Task';
-import { TbClipboardText } from 'react-icons/tb';
-import { useTasks } from '../hooks/useTasks';
+import { useTasks } from '../hooks/useTasks'
+import { Task } from './Task'
+import { TbClipboardText } from 'react-icons/tb'
 
-import styles from './Tasks.module.css';
+import styles from './Tasks.module.css'
+
 export function Tasks() {
-	const { tasks } = useTasks();
+	const { tasks } = useTasks()
 
-	const tasksQuantity = tasks.length;
+	const tasksQuantity = tasks.length
 	const completedTasksQuantity = tasks.filter(
 		(item) => item.isCompleted === true
-	).length;
+	).length
 
 	return (
 		<section className={styles.tasks}>
@@ -32,14 +33,14 @@ export function Tasks() {
 							task={item}
 							key={item.id}
 						/>
-					);
+					)
 				})}
 
 				{tasksQuantity <= 0 && (
 					<section className={styles.empty}>
 						<TbClipboardText size={50} />
 						<div>
-							<p>Você ainda não tem tarefas cadastradas</p>
+							<p>Você ainda não tem tarefas cadastradas!</p>
 							<span>
 								Crie tarefas e organize seus itens a fazer
 							</span>
@@ -48,5 +49,5 @@ export function Tasks() {
 				)}
 			</div>
 		</section>
-	);
+	)
 }

@@ -53,6 +53,7 @@
 	gap: 1rem;
 	color: var(--gray-300);
 	text-align: center;
+	cursor: not-allowed;
 }
 
 .empty svg {

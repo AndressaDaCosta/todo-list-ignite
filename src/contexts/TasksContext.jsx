@@ -1,20 +1,20 @@
-import { createContext, useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { createContext, useEffect, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
-export const TasksContext = createContext({});
+export const TasksContext = createContext({})
 
 export function TasksContextProvider({ children }) {
-	const [tasks, setTasks] = useState([]);
+	const [tasks, setTasks] = useState([])
 
 	function setTasksAndSave(newTasks) {
-		setTasks(newTasks);
-		localStorage.setItem('todo:savedtasks', JSON.stringify(newTasks));
+		setTasks(newTasks)
+		localStorage.setItem('todo:savedtasks', JSON.stringify(newTasks))
 	}
 
 	function addTask(taskTitle) {
 		if (!taskTitle.trim('')) {
-			alert('Insira um texto válido para sua tarefa!');
-			return;
+			alert('Insira um texto válido para sua tarefa!')
+			return
 		}
 
 		setTasksAndSave([
@@ -24,12 +24,12 @@ export function TasksContextProvider({ children }) {
 				title: taskTitle,
 				isCompleted: false
 			}
-		]);
+		])
 	}
 
 	function deleteTaskById(taskId) {
-		const newTasks = tasks.filter((item) => item.id !== taskId);
-		setTasksAndSave(newTasks);
+		const newTasks = tasks.filter((item) => item.id !== taskId)
+		setTasksAndSave(newTasks)
 	}
 
 	function toggleTaskCompletedById(taskId) {
@@ -38,28 +38,28 @@ export function TasksContextProvider({ children }) {
 				return {
 					...item,
 					isCompleted: !item.isCompleted
-				};
+				}
 			}
-			return item;
-		});
-		setTasksAndSave(newTasks);
+			return item
+		})
+		setTasksAndSave(newTasks)
 	}
 
 	function loadSavedTasks() {
-		const saved = localStorage.getItem('todo:savedtasks');
+		const saved = localStorage.getItem('todo:savedtasks')
 		if (saved) {
-			setTasks(JSON.parse(saved));
+			setTasks(JSON.parse(saved))
 		}
 	}
 
 	useEffect(() => {
-		loadSavedTasks();
-	}, []);
+		loadSavedTasks()
+	}, [])
 
 	return (
 		<TasksContext.Provider
 			value={{ addTask, tasks, deleteTaskById, toggleTaskCompletedById }}>
 			{children}
 		</TasksContext.Provider>
-	);
+	)
 }

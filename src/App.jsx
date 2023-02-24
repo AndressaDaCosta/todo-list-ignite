@@ -1,8 +1,8 @@
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
-import { Tasks } from './components/Tasks';
-import { TasksContextProvider } from './contexts/TasksContext';
-import styles from './styles/global.css';
+import { TasksContextProvider } from './contexts/TasksContext'
+import { Header } from './components/Header'
+import { Tasks } from './components/Tasks'
+import { Footer } from './components/Footer'
+import styles from './styles/global.css'
 
 export function App() {
 	return (
@@ -11,5 +11,5 @@ export function App() {
 			<Tasks />
 			<Footer />
 		</TasksContextProvider>
-	);
+	)
 }
