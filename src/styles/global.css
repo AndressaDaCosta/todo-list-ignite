@@ -1,80 +1,72 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+	font-size: 1rem;
 }
 
 :root {
---gray-100: #f2f2f2;
---gray-200: #d9d9d9;
---gray-300: #808080;
---gray-400: #333333;
---gray-500: #262626;
---gray-600: #1a1a1a;
---gray-700: #0d0d0d;
+	--gray-100: #f2f2f2;
+	--gray-200: #d9d9d9;
+	--gray-300: #808080;
+	--gray-400: #333333;
+	--gray-500: #262626;
+	--gray-600: #1a1a1a;
+	--gray-700: #0d0d0d;
 
---purple: #8284fa;
---purple-dark: #5e60ce;
+	--purple: #8284fa;
+	--purple-dark: #5e60ce;
 
---blue: #4ea8de;
---blue-dark: #1e6f9f;
+	--blue: #4ea8de;
+	--blue-dark: #1e6f9f;
 
---danger: #e25858;
+	--danger: #e25858;
 }
 
-/* :focus {
-outline: transparent;
-
-} */
-
 button {
-cursor: pointer;
+	cursor: pointer;
 }
 
 body {
-background: var(--gray-600);
-color: var(--gray-100);
-min-height: 100vh;
--webkit-font-smoothing: antialiased;
+	background: var(--gray-600);
+	color: var(--gray-100);
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
 }
 body,
 input,
 textarea,
 button {
-font-weight: 400;
+	font-weight: 400;
+	font-family: 'Inter', sans-serif;
+	font-size: 1rem; /* acessibilidade  1 unidade relativa do tamanho fonte padrão 16px, caso o usuário nao aumente nem diminua  */
 }
+
 input {
-box-shadow: 0 0 0 2px var(--purple-dark);
+	box-shadow: 0 0 0 2px var(--purple-dark);
 }
- 
-ul, ol, li {
-  list-style: none;
+:focus {
+	outline: transparent;
+	box-shadow: 0 0 0 2px var(--blue);
+}
+
+ul,
+ol,
+li {
+	list-style: none;
 }
 @media screen and (max-width: 768px) {
-html {
-  font-size: 87.5%;
+	html {
+		font-size: 87.5%;
+	}
+
+	body {
+		padding: 0 1.125rem;
+	}
 }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* }
+/* 
 svg,
 button {
 transition-property: color, background-color;
