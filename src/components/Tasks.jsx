@@ -7,8 +7,8 @@ import styles from './Tasks.module.css'
 export function Tasks() {
 	const { tasks } = useTasks()
 
-	const tasksQuantity = tasks.length
-	const completedTasksQuantity = tasks.filter(
+	const tasksAmount = tasks.length
+	const completedTasksAmount = tasks.filter(
 		(item) => item.isCompleted === true
 	).length
 
@@ -17,12 +17,12 @@ export function Tasks() {
 			<header className={styles.header}>
 				<div>
 					<p>Tarefas criadas</p>
-					<span>{tasksQuantity}</span>
+					<span>{tasksAmount}</span>
 				</div>
 				<div>
 					<p className={styles.textPurple}>Concluídas</p>
 					<span>
-						{completedTasksQuantity} de {tasksQuantity}
+						{completedTasksAmount} de {tasksAmount}
 					</span>
 				</div>
 			</header>
@@ -36,7 +36,7 @@ export function Tasks() {
 					)
 				})}
 
-				{tasksQuantity <= 0 && (
+				{tasksAmount <= 0 && (
 					<section className={styles.empty}>
 						<TbClipboardText size={50} />
 						<div>

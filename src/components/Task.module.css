@@ -42,7 +42,7 @@ p.textCompleted {
 	color: var(--purple);
 }
 
-.deleteButton {
+.buttonDelete {
 	background: none;
 	border: none;
 	color: var(--gray-300);

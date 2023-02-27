@@ -6,7 +6,7 @@ export const TasksContext = createContext({})
 export function TasksContextProvider({ children }) {
 	const [tasks, setTasks] = useState([])
 
-	function setTasksAndSave(newTasks) {
+	function storedTasks(newTasks) {
 		setTasks(newTasks)
 		localStorage.setItem('todo:savedtasks', JSON.stringify(newTasks))
 	}
@@ -17,7 +17,7 @@ export function TasksContextProvider({ children }) {
 			return
 		}
 
-		setTasksAndSave([
+		storedTasks([
 			...tasks,
 			{
 				id: uuidv4(),
@@ -29,7 +29,7 @@ export function TasksContextProvider({ children }) {
 
 	function deleteTaskById(taskId) {
 		const newTasks = tasks.filter((item) => item.id !== taskId)
-		setTasksAndSave(newTasks)
+		storedTasks(newTasks)
 	}
 
 	function toggleTaskCompletedById(taskId) {
@@ -42,13 +42,13 @@ export function TasksContextProvider({ children }) {
 			}
 			return item
 		})
-		setTasksAndSave(newTasks)
+		storedTasks(newTasks)
 	}
 
 	function loadSavedTasks() {
-		const saved = localStorage.getItem('todo:savedtasks')
-		if (saved) {
-			setTasks(JSON.parse(saved))
+		const taskIsSaved = localStorage.getItem('todo:savedtasks')
+		if (taskIsSaved) {
+			setTasks(JSON.parse(taskIsSaved))
 		}
 	}
 

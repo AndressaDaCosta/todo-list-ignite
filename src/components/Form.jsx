@@ -9,22 +9,22 @@ export function Form() {
 
 	const [title, setTitle] = useState('')
 
-	function onChangeTitle(event) {
+	function HandleChangeTitle(event) {
 		setTitle(event.target.value)
 	}
 
-	function onSubmitTask(event) {
+	function HandleSubmitTask(event) {
 		event.preventDefault()
 		addTask(title)
 		setTitle('')
 	}
 	return (
 		<form
-			onSubmit={onSubmitTask}
+			onSubmit={HandleSubmitTask}
 			className={styles.search}>
 			<input
 				value={title}
-				onChange={onChangeTitle}
+				onChange={HandleChangeTitle}
 				placeholder="Adicione uma nova tarefa"
 			/>
 			<button>
